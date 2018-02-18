@@ -6,8 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Chakra.Core" Version="2.0.7" />
-    <PackageReference Include="LT.PluralizeEn" Version="1.0.1" />
-    <PackageReference Include="MongoDB.Driver" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LT.Chakra.Core.MongoDb\LT.Chakra.Core.MongoDb.csproj" />
+    <ProjectReference Include="..\LT.TEST.Chakra.Core.MongoDb\LT.TEST.Chakra.Core.MongoDb.csproj" />
   </ItemGroup>
 
 </Project>

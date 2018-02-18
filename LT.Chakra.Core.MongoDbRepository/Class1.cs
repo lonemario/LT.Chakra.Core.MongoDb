@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LT.Chakra.Core.MongoDb
+namespace LT.Chakra.Core.MongoDbRepository
 {
     public class Class1
     {
