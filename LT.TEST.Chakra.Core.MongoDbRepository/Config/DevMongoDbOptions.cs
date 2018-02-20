@@ -2,23 +2,27 @@
 
 namespace LT.TEST.Chakra.Core.MongoDbRepository.Config
 {
-    public class DevMongoDbOptions : IMongoDbOptions
+    public class DevMongoDbOptions : MongoDbOptions
     {
-        /// <summary>
-        /// Mongo Db Connection String Url ex.  mongodb://my-ip-address:my-port"
-        /// </summary>
-        public string MongoDbUrl { get { return "mongodb://192.168.44.132:27017"; } set { } }
-        /// <summary>
-        /// Mongo Db Database Name
-        /// </summary>
-        public string MongoDbName { get { return "TestDb"; } set { } }
-        /// <summary>
-        /// Mongo Db User Name
-        /// </summary>
-        public string MongoDbUser { get; set; }
-        /// <summary>
-        /// Mongo Db Password
-        /// </summary>
-        public string MongoDbPassword { get; set; }
+        public DevMongoDbOptions()
+        {
+            //mongodb://router1.example.com:27017,router2.example2.com:27017,router3.example3.com:27017/
+            //mongodb://example1.com,example2.com,example3.com/?replicaSet=test&w=2&wtimeoutMS=2000
+            //mongodb://localhost,localhost:27018,localhost:27019/?replicaSet=test
+            //mongodb://db1.example.net,db2.example.com/?replicaSet=test
+            //mongodb://sysop:moon@localhost/records
+            //mongodb://db1.example.net:27017,db2.example.net:2500/?replicaSet=test&connectTimeoutMS=300000
+            //mongodb+srv://server.example.com/
+            //mongodb://db1.example.net:27017,db2.example.net:2500/?replicaSet=test
+
+            //ConnectionString = "mongysop:moon@localhost/records";
+
+            MongoDbHostsUrl = "192.168.44.132:27017";
+            MongoDbUser = "test";
+            MongoDbPassword = "test";
+            MongoDbName = "TestDb";
+            UserOfAdminDb = true;
+            //UseDNSSeedlist = true;
+        }
     }
 }

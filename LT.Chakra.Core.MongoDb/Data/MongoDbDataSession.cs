@@ -15,33 +15,21 @@ namespace LT.Chakra.Core.MongoDb.Data
         public MongoClient Client { get; }
         public IMongoDatabase MongoDatabase { get; }
 
-        public IMongoDbOptions Options { get;  }
+        //public IMongoDbOptions Options { get;  }
 
         public MongoDbDataSession()
         {
             //var con = new MongoConnectionStringBuilder(ConfigurationManager.ConnectionStrings["MongoDB"].ConnectionString);
             var options = new TOptions();
-            Options = options;
+            //Options = options;
             //Inizializzazione del client MongoDb
-            var dbUrl = options.MongoDbUrl; // @"mongodb://192.168.44.132:27017";
-            var dbName = options.MongoDbName; // "TestDb";
+            //var dbUrl = options.MongoDbHostsUrl; // @"mongodb://192.168.44.132:27017";
+            //var dbName = options.MongoDbPassword; // "TestDb";
 
-            Client = new MongoClient(dbUrl);
-            MongoDatabase = Client.GetDatabase(dbName);
+            Client = new MongoClient(options.ConnectionString);
+            
+            MongoDatabase = Client.GetDatabase(options.MongoDbName);
         }
-
-        //public MongoDbDataSession(string DbUrl, string DbName)
-        //{
-        //    //var con = new MongoConnectionStringBuilder(ConfigurationManager.ConnectionStrings["MongoDB"].ConnectionString);
-
-
-        //    //Inizializzazione del client MongoDb
-        //    var dbUrl = @"mongodb://192.168.44.132:27017";
-        //    var dbName = "TestDb";
-
-        //    Client = new MongoClient(dbUrl);
-        //    MongoDatabase = Client.GetDatabase(dbName);
-        //}
 
         public TRepositoryInterface ResolveRepository<TRepositoryInterface>() where TRepositoryInterface : IRepository
         {

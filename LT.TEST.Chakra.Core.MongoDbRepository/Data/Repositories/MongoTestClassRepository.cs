@@ -1,5 +1,4 @@
-﻿using LT.Chakra.Core.MongoDb.Configuration;
-using LT.Chakra.Core.MongoDb.Data.Repositories;
+﻿using LT.Chakra.Core.MongoDb.Data.Repositories;
 using LT.TEST.Chakra.Core.MongoDb.Data.Repositories;
 using LT.TEST.Chakra.Core.MongoDb.Entities;
 using LT.TEST.Chakra.Core.MongoDbRepository.Config;
