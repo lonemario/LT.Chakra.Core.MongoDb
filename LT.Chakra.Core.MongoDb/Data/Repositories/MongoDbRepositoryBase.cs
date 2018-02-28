@@ -19,6 +19,17 @@ namespace LT.Chakra.Core.MongoDb.Data.Repositories
         private bool _IsDisposed;
         protected MongoDbDataSession<TOptions> DataSession { get; }
         private string _CollectionName;
+        protected IList<TEntity> Collection {
+            get
+            {
+                return DataSession.MongoDatabase.GetCollection<TEntity>(_CollectionName).FindSync(_ => true).ToList();
+            }
+        }
+        protected IMongoDbOptions Options {
+            get {
+                return DataSession.Options;
+            }
+        }
 
         /// <summary>
         /// Costructor of Mongo Repository Base

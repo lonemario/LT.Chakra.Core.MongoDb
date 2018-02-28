@@ -26,31 +26,35 @@ namespace LT.TEST.Chakra.Core.MongoDbConsole
                     //MongoTestClassRepository _repo = new MongoTestClassRepository(new MongoDbDataSession());
                     //do
                     //{
-                    //var tmpEntity = new Entities.TestClass
-                    //{
-                    //    Property1 = RandomGen.GenericInt(10000),
-                    //    Property2 = RandomGen.GenericString(250, 20),
-                    //    Property3 = RandomGen.GenericDate(),
-                    //    Property4 = null,
-                    //    Property5 = RandomGen.GenericNullableDate(60),
-                    //    Property6 = null
-                    //};
+                    //    var tmpEntity = new Entities.TestClass
+                    //    {
+                    //        Property1 = RandomGen.GenericInt(10000),
+                    //        Property2 = RandomGen.GenericString(250, 20),
+                    //        Property3 = RandomGen.GenericDate(),
+                    //        Property4 = null,
+                    //        Property5 = RandomGen.GenericNullableDate(60),
+                    //        Property6 = null
+                    //    };
 
-                    //Layer.SaveTest(ref tmpEntity);
+                    //    Layer.SaveTest(ref tmpEntity);
 
-                    //Task.Delay(5000).Wait();
-                    
+                    //    Task.Delay(5000).Wait();
+
                     //} while (true);
-                    var resString = RandomGenerator.GenericOnlyAlfaNumericString(43, 0, false);
-                    // RICERCA SINGOLA ENTITà    
+                    //var resString = RandomGenerator.GenericOnlyAlfaNumericString(43, 0, false);
+                    //// RICERCA SINGOLA ENTITà    
 
-                    //Fetch
-                    var resp = Layer.Fetch();
+                    ////Fetch
+                    var respF = Layer.Fetch();
 
-                    var resS = Layer.GetSingle("de3318bd-d5db-4f1e-8130-cfed77039e93");
-                    Layer.Delete(resS);
+                    //var respFF = Layer.Fetch(c => c.Property1 == 1);
 
-                    var resd = Layer.Count();
+                    //var resS = Layer.GetSingle("de3318bd-d5db-4f1e-8130-cfed77039e93");
+                    //Layer.Delete(resS);
+
+                    //var resd = Layer.Count();
+                    var TestCollection = Layer.GetClass(1); 
+
                 }
 
             }

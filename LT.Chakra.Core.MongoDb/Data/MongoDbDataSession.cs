@@ -12,15 +12,18 @@ namespace LT.Chakra.Core.MongoDb.Data
         where TOptions : class, IMongoDbOptions, new()
     {
         private bool _IsDisposed;
+        private IMongoDbOptions _options;
+
         public MongoClient Client { get; }
         public IMongoDatabase MongoDatabase { get; }
 
-        //public IMongoDbOptions Options { get;  }
+        public IMongoDbOptions Options { get { return _options; }  }
 
         public MongoDbDataSession()
         {
             //var con = new MongoConnectionStringBuilder(ConfigurationManager.ConnectionStrings["MongoDB"].ConnectionString);
             var options = new TOptions();
+            _options = options;
             //Options = options;
             //Inizializzazione del client MongoDb
             //var dbUrl = options.MongoDbHostsUrl; // @"mongodb://192.168.44.132:27017";

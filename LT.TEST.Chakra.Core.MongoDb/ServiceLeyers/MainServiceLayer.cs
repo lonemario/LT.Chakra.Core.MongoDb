@@ -53,6 +53,11 @@ namespace LT.TEST.Chakra.Core.MongoDb.ServiceLeyers
             return _TestRepository.Count(filterExpression);
         }
 
+
+        public TestClass GetClass(int? property1)
+        {
+            return _TestRepository.GetTestClassByProperty1(property1);
+        }
         /// <summary>
         /// Save Audience
         /// </summary>
