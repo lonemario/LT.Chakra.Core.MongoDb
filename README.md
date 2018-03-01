@@ -105,3 +105,11 @@ Db Options class
         }
     }
 ```
+
+### Authors
+
+- [Mario Righi](http://www.mariorighi.com)
+
+### License
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
