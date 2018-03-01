@@ -3,6 +3,8 @@ using LT.TEST.Chakra.Core.MongoDb.ServiceLeyers;
 using LT.RandomGen;
 using ZenProgramming.Chakra.Core.Data;
 using LT.TEST.Chakra.Core.MongoDbRepository.Config;
+using LT.Chakra.Core.MongoDb.Utilities;
+using LT.TEST.Chakra.Core.MongoDb.Entities;
 
 namespace LT.TEST.Chakra.Core.MongoDbConsole
 {
@@ -53,7 +55,12 @@ namespace LT.TEST.Chakra.Core.MongoDbConsole
                     //Layer.Delete(resS);
 
                     //var resd = Layer.Count();
-                    var TestCollection = Layer.GetClass(1); 
+                    var TestCollection = Layer.GetClass(1);
+
+                    var myTest = new PluralizeUtility();
+                    var resTS = myTest.Pluralize(typeof(TestClass));
+
+                    //TEST UTILS
 
                 }
 

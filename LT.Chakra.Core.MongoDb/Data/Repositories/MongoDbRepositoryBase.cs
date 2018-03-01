@@ -1,4 +1,5 @@
 ﻿using LT.Chakra.Core.MongoDb.Configuration;
+using LT.Chakra.Core.MongoDb.Utilities;
 using LT.PluralizeEn;
 using MongoDB.Driver;
 using System;
@@ -57,8 +58,8 @@ namespace LT.Chakra.Core.MongoDb.Data.Repositories
             //Imposto il nome della Collection
             if (CollectionName == null)
             {
-                var pluralize = new Pluralizer();
-                CollectionName = pluralize.Pluralize(typeof(TEntity).Name);
+                var pluralize = new PluralizeUtility();
+                CollectionName = pluralize.Pluralize(typeof(TEntity));
             }
             _CollectionName = CollectionName;
         }

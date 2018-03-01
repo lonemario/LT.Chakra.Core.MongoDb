@@ -1,7 +1,7 @@
 # LT.Chakra.Core.MongoDb 
 [![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/LT.Chakra.Core.MongoDb)
 
-Provider for MongoDb in Chakra.Core framework
+Provider for MongoDb in [Chakra.Core Framework](https://www.nuget.org/packages/Chakra.Core/)
 
 ## Prerequisites
 
@@ -12,6 +12,9 @@ LT.PluralizeEn (>= 1.0.1)
 MongoDB.Driver (>= 2.5.0)
 ```
 
+### Example 
+
+Startup project class
 
 ```c#
 class Program
@@ -66,4 +69,39 @@ class Program
         Console.ReadKey();
     }
 }
+```
+
+Db Options class
+
+```c#
+    public class DevMongoDbOptions : MongoDbOptions
+    {
+        //Class for Mongo Db Connection, it's possible set the connection string or
+        //the singles parameters
+        public DevMongoDbOptions()
+        {
+            //mongodb://router1.example.com:27017,router2.example2.com:27017,router3.example3.com:27017/
+            //mongodb://example1.com,example2.com,example3.com/?replicaSet=test&w=2&wtimeoutMS=2000
+            //mongodb://localhost,localhost:27018,localhost:27019/?replicaSet=test
+            //mongodb://db1.example.net,db2.example.com/?replicaSet=test
+            //mongodb://sysop:moon@localhost/records
+            //mongodb://db1.example.net:27017,db2.example.net:2500/?replicaSet=test&connectTimeoutMS=300000
+            //mongodb+srv://server.example.com/
+            //mongodb://db1.example.net:27017,db2.example.net:2500/?replicaSet=test
+
+            //ConnectionString = "mongysop:moon@localhost/records";
+
+            //SERVER AND PORT
+            MongoDbHostsUrl = "XXX.XXX.XXX.XXX:XXXX";
+            //Mongo User Name (Optional)
+            MongoDbUser = "test";
+            //Mongo Password (Optional)
+            MongoDbPassword = "test";
+            //Mongo Db Name
+            MongoDbName = "TestDb";
+            //If user is in AdminDb (Optional)
+            UserOfAdminDb = true;
+            //UseDNSSeedlist = true;
+        }
+    }
 ```
