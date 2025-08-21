@@ -16,7 +16,7 @@
   <ItemGroup>
     <PackageReference Include="Chakra.Core" Version="2.0.7" />
     <PackageReference Include="LT.PluralizeEn" Version="1.0.3" />
-    <PackageReference Include="MongoDB.Driver" Version="2.5.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.0" />
     <None Include="..\README.md" Pack="true" PackagePath="\"/>    
   </ItemGroup>
 

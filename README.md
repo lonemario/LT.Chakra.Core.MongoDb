@@ -9,7 +9,7 @@ Provider for MongoDb in [Chakra.Core Framework](https://www.nuget.org/packages/C
 ```
 Chakra.Core (>= 2.0.7)
 LT.PluralizeEn (>= 1.0.3)
-MongoDB.Driver (>= 2.5.0)
+MongoDB.Driver (>= 2.19.0)
 ```
 
 ## Example 
