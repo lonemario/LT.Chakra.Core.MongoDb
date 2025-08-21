@@ -8,13 +8,16 @@
     <Description>Provider for MongoDb in Chakra.Core Framework</Description>
     <PackageLicenseUrl>https://choosealicense.com/licenses/mit/</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/lonemario/LT.Chakra.Core.MongoDb</PackageProjectUrl>
-    <Version>1.0.2</Version>
+    <Version>0.0.0</Version>
+    <PackageId>LT.Chakra.Core.MongoDb</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Chakra.Core" Version="2.0.7" />
-    <PackageReference Include="LT.PluralizeEn" Version="1.0.1" />
+    <PackageReference Include="LT.PluralizeEn" Version="1.0.3" />
     <PackageReference Include="MongoDB.Driver" Version="2.5.0" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>    
   </ItemGroup>
 
 </Project>
